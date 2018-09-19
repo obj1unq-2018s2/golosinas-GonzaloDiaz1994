@@ -1,0 +1,141 @@
+import golosinas.*
+
+describe "test de golosinas baniadas" {
+
+	test "peso inicial tuttifrutti" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(9, golosinaBaniada.peso())
+	}
+	
+	test "precio tuttifrutti baniado" {
+		tuttifrutti.libreGluten()
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(9, golosinaBaniada.precio())
+		tuttifrutti.libreGluten(false)
+		assert.equals(12, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos tuttifrutti baniado" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(9, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(7, golosinaBaniada .peso())
+		golosinaBaniada.mordisco()
+		assert.equals(5, golosinaBaniada.peso())
+	}
+
+	test "gusto tuttifrutti baniado" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals("frutilla", golosinaBaniada.gusto())
+		golosinaBaniada.mordisco()
+		assert.equals("chocolate", golosinaBaniada .gusto())
+		golosinaBaniada.mordisco()
+		assert.equals("naranja", golosinaBaniada.gusto())
+		golosinaBaniada.mordisco()
+		assert.equals("frutilla", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten tuttifrutti baniado" {
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.that(golosinaBaniada.libreGluten())
+		tuttifrutti.libreGluten(false)
+		assert.that(not golosinaBaniada.libreGluten())
+	}
+
+
+	test "peso inicial chocolatin 40 gramos baniado" {
+		chocolatin.pesoInicial(40)
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals(44, golosinaBaniada.peso())
+	}
+	
+	test "precio de chocolatin 40 gramos baniado" {
+		chocolatin.pesoInicial(40)
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals(22, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos de chocolatin 40 gramos baniado" {
+		chocolatin.pesoInicial(40)
+		golosinaBaniada.baniaA(chocolatin)
+		golosinaBaniada.mordisco()
+		assert.equals(40, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(36, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(34, golosinaBaniada.peso())		
+	}
+	
+	test "gusto de chocolatin 40 gramos baniado" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals("chocolate", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten de chocolatin 40 gramos baniado" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.that(not golosinaBaniada.libreGluten())	
+	}
+	
+	test "peso inicial chocolatin 100 gramos baniado" {
+		chocolatin.pesoInicial(100)
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals(104, golosinaBaniada.peso())
+	}
+	
+	test "precio de chocolatin 100 gramos baniado" {
+		chocolatin.pesoInicial(100)
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals(52, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos de chocolatin 100 gramos baniado" {
+		chocolatin.pesoInicial(100)
+		golosinaBaniada.baniaA(chocolatin)
+		golosinaBaniada.mordisco()
+		assert.equals(100, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(96, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(94, golosinaBaniada.peso())
+		
+	}
+	
+	test "gusto de chocolatin 100 gramos baniado" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals("chocolate", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten de chocolatin 100 gramos baniado" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.that(not golosinaBaniada.libreGluten())	
+	}
+		
+	test "peso inicial chupetin baniado" {
+		golosinaBaniada.baniaA(chupetin)
+		assert.equals(11, golosinaBaniada.peso())
+	}
+	
+	test "precio chupetin baniado" {
+		golosinaBaniada.baniaA(chupetin)		
+		assert.equals(4, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos chupetin baniado" {
+		golosinaBaniada.baniaA(chupetin)
+		golosinaBaniada.mordisco()
+		assert.equals(8.3, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(5.67, golosinaBaniada.peso())
+	}
+	
+	test "gusto chupetin baniado" {
+		golosinaBaniada.baniaA(chupetin)
+		assert.equals("naranja", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten chupetin baniado" {
+		golosinaBaniada.baniaA(chupetin)
+		assert.that(golosinaBaniada.libreGluten())	
+	}
+	
+}
