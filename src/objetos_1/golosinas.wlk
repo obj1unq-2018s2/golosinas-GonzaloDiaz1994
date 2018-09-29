@@ -72,6 +72,8 @@ object golosinaBaniada {
 	method libreGluten() = golosinaInterior.libreGluten()	
 }
 
+// Esto debia resolverse con colecciones!
+// La idea era que esta pueda rotar de alguna forma.
 object tuttifrutti {
 	var property peso = 5
 	var property libreGluten = true

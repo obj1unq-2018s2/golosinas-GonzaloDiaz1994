@@ -62,6 +62,10 @@ describe "tests de mariano" {
 		assert.equals(120, mariano.pesoGolosinas())
 	}
 	
+	// los objetos dentro de las listas a comparar
+	// no bastan con que sean los mismos, como en el
+	// caso de los conjuntos, si no que tambien
+	// en el mismo orden
 	test "golosinas faltantes"{
 		assert.equals([chupetin, alfajor], mariano.golosinasFaltantes([alfajor, bombon, chocolatin, chupetin]))
 	}
